@@ -20,9 +20,9 @@
         ""
       ],
       "stopAtEntry": false,
-      "cwd": "c:/Nuova cartella/Progetti-C/Il Linguaggio C - Libro/Capitolo5/Esercizio59",
+      "cwd": "c:/Progetti-C/Il Linguaggio C - Libro",
       "environment": [],
-      "program": "c:/Nuova cartella/Progetti-C/Il Linguaggio C - Libro/Capitolo5/Esercizio59/build/Debug/outDebug",
+      "program": "c:/Progetti-C/Il Linguaggio C - Libro/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/Program Files/CodeBlocks/MinGW/bin/gdb.exe",
