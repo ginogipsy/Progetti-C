@@ -4,22 +4,23 @@ void hanoiTowerMovement(int nDischiDaSpostare, int pioloDiPartenza, int pioloDiA
 
 int main(void)
 {
-    int nDischiDaSpostare = 3;
-    int pioloDiPartenza = 1;
-    int pioloDiArrivo = 3;
-    int pioloTemporaneo = 2;
-    hanoiTowerMovement(nDischiDaSpostare, pioloDiPartenza, pioloDiArrivo, pioloTemporaneo);
+    int nDischi = 4;
+    int partenza = 1;
+    int arrivo = 3;
+    int temporaneo = 2;
+    hanoiTowerMovement(nDischi, partenza, arrivo, temporaneo);
 }
 
-void hanoiTowerMovement(int nDischiDaSpostare, int pioloDiPartenza, int pioloDiArrivo, int pioloTemporaneo)
+void hanoiTowerMovement(int nDischi, int partenza, int arrivo, int temporaneo)
 {
-    if(nDischiDaSpostare == 1)
+    if(nDischi == 1)
     {
-        printf("%d%s%d\n", nDischiDaSpostare, " -> ", pioloDiArrivo);
+        printf("%d%s%d\n", partenza, " -> ", arrivo);
     }
     else
     {
-        printf("%d%s%d\n", nDischiDaSpostare, " -> ", pioloDiArrivo);
-        hanoiTowerMovement(nDischiDaSpostare -1 , pioloDiPartenza, pioloDiArrivo-1, pioloTemporaneo);
+        hanoiTowerMovement(nDischi -1, partenza, temporaneo, arrivo);
+        printf("%d%s%d\n", partenza, " -> ", arrivo);
+        hanoiTowerMovement(nDischi -1 , temporaneo, arrivo, partenza);
     }
 }
