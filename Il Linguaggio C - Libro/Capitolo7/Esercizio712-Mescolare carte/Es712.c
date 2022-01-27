@@ -1,5 +1,3 @@
-// Fig. 7.24: fig07_24.c
-// Card shuffling and dealing.
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -16,6 +14,7 @@ void deal(unsigned int wDeck[][FACES], const char *wFace[],
           const char *wSuit[]); // dealing doesn't modify the arrays
 void dealHand(unsigned int hand[][FACES], const char *wFace[],
           const char *wSuit[]); // dealing doesn't modify the arrays
+
 void takeHand(unsigned int hand[][FACES], unsigned int wDeck[][FACES]);
 
 int main(void)
@@ -44,7 +43,11 @@ int main(void)
         {"No Pair", "One Pair", "Two Pairs", "Three of a Kind",
          "Four of a Kind", "Flush", "Straight"};
 
-    //deal(deck, face, suit); // deal the deck
+    printf("\n%s\n", "Shuffled deck");
+    puts("");
+    deal(deck, face, suit); // deal the deck
+    printf("\n%s\n", "First hand");
+    puts("");
     dealHand(hand, face, suit); // deal the hand
 }
 
@@ -71,9 +74,21 @@ void shuffle(unsigned int wDeck[][FACES])
 
 void takeHand(unsigned int hands[][FACES], unsigned int wDeck[][FACES])
 {
-    for (size_t card = 0; card < HANDS; ++card)
+    for (size_t card = 1; card <= HANDS; ++card)
     {
-        hands[card][card] = wDeck[card][card];
+        // loop through rows of wDeck
+        for (size_t row = 0; row < SUITS; ++row)
+        {
+            // loop through columns of wDeck for current row
+            for (size_t column = 0; column < FACES; ++column)
+            {
+                // if slot contains current card, display card
+                if (wDeck[row][column] == card)
+                {
+                    hands[row][column] = card;
+                }
+            }
+        }
     }
 }
 
